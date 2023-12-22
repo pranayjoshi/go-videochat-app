@@ -142,7 +142,7 @@ const Room = (props) => {
             );
         }
     };
-
+ 
     const handleTrackEvent = (e) => {
         console.log("Received Tracks");
         partnerVideo.current.srcObject = e.streams[0];
