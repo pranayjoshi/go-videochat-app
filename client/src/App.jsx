@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import CreateRoom from "./components/CreateRoom"
 import Room from "./components/Room"
@@ -7,10 +7,10 @@ import Room from "./components/Room"
 function App() {
     return <div className="App">
 		<BrowserRouter>
-			<Switch>
-				<Route path="/" exact component={CreateRoom}></Route>
-				<Route path="/room/:roomID" component={Room}></Route>
-			</Switch>
+			<Routes>
+				<Route path="/" component={<CreateRoom/>}></Route>
+				<Route path="/room/:roomID" component={<Room/>}></Route>
+			</Routes>
 		</BrowserRouter>
 	</div>;
 }
