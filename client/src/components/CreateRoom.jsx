@@ -1,6 +1,6 @@
 import React from "react";
 
-const CreateRoom = (props) => {
+const CreateRoom = () => {
     const create = async (e) => {
         e.preventDefault();
 
