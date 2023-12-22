@@ -8,8 +8,8 @@ function App() {
     return <div className="App">
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" component={<CreateRoom/>}></Route>
-				<Route path="/room/:roomID" component={<Room/>}></Route>
+				<Route path="/" element={<CreateRoom />}></Route>
+				<Route path="/room/:roomID" element={<Room/>}></Route>
 			</Routes>
 		</BrowserRouter>
 	</div>;
