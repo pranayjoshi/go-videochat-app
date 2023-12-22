@@ -3,10 +3,21 @@ package main
 import (
 	"log"
 	"math/rand"
+	"sync"
 	"time"
 
 	"github.com/gorilla/websocket"
 )
+
+// Participant describes a single entity in the hashmap
+type Participant struct {
+	Host bool
+	Conn *websocket.Conn
+}
+type RoomMap struct {
+	Mutex sync.RWMutex
+	Map   map[string][]Participant
+}
 
 // RoomMap is the main hashmap [roomID string] -> [[]Participant]
 

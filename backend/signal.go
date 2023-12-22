@@ -5,20 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"sync"
-
 	"github.com/gorilla/websocket"
 )
-
-// Participant describes a single entity in the hashmap
-type Participant struct {
-	Host bool
-	Conn *websocket.Conn
-}
-type RoomMap struct {
-	Mutex sync.RWMutex
-	Map   map[string][]Participant
-}
 
 // AllRooms is the global hashmap for the server
 var AllRooms RoomMap
