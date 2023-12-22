@@ -14,10 +14,14 @@ const Room = (props) => {
         );
         console.log(cameras);
 
+        if (cameras.length === 0) {
+            throw new Error("No cameras found.");
+        }
+
         const constraints = {
             audio: true,
             video: {
-                deviceId: cameras[1].deviceId,
+                deviceId: cameras[0].deviceId,
             },
         };
 
@@ -25,6 +29,7 @@ const Room = (props) => {
             return await navigator.mediaDevices.getUserMedia(constraints);
         } catch (err) {
             console.log(err);
+            alert("Failed to access camera.");
         }
     };
 
